@@ -16,6 +16,11 @@ body {
     flex-wrap: wrap;
     width: 550px;
     height: 550px;
+    /* perspectiva en el eje z,
+    establece que tan lejos del eje z esta el objeto,
+    esto hace un espacio 3d donde el eje z tiene una "profundidad"
+    de 1000px */
+    perspective: 1000px;
 }
 
 .memory-card {
@@ -25,9 +30,13 @@ body {
     height: calc(33.333% - 10px);
     /* margen */
     margin: 5px;
-    /* para posicionar el frente y fondo de la carta */
+    /* para posicionar el frente y dorso de la carta */
     position: relative;
     transform: scale(1);
+    /* posiciona la carta en el
+    espacio 3d creado en el elemento padre */
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 
 .memory-card:active {
@@ -35,6 +44,13 @@ body {
     transition: transform .2s;
 }
 
+/* rotacion de una carta */
+.memory-card-flip {
+    transform: rotateY(180deg);
+}
+
+/* cada "cara" es una imagen que
+tiene a su vez frente y dorso */
 .card-front,
 .card-back {
     position: absolute;
@@ -43,4 +59,12 @@ body {
     padding: 1.5rem;
     background-color: seagreen;
     border-radius: .5rem;
+    /* ocultar el dorso de cada imagen */
+    backface-visibility: hidden;
+}
+
+/* rotar siempre la cara de atras para que
+sea visible al dorso de la cara frontal */
+.card-back {
+    transform: rotateY(180deg);
 }
