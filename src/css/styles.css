@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.memory-board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 550px;
+    height: 550px;
+}
+
+.memory-card {
+    /* grilla de 4 columnas */
+    width: calc(25% - 10px);
+    /* grilla de 3 filas */
+    height: calc(33.333% - 10px);
+    /* margen */
+    margin: 5px;
+    /* para posicionar el frente y fondo de la carta */
+    position: relative;
+    transform: scale(1);
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    background-color: seagreen;
+    border-radius: .5rem;
+}
