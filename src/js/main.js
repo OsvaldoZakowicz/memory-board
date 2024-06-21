@@ -1,11 +1,66 @@
 // cartas
 const cards = document.querySelectorAll(".memory-card");
 
+// estado de la carta, al inicio no hay ninguna volteada
+let hasFlippedCard = false;
+// primera y segunda carta a comparar
+let firstCard, secondCard;
+// bloquear tablero
+let lockBoard = false;
+
 // funcion para voltear la carta,
 // aplica una clase a la carta que dispara el evento click
+// captura las cartas, comprueba si hay match
 function flipCard() {
-    this.classList.toggle("memory-card-flip");
-}
+    if (lockBoard) return;
+    if (firstCard === this) return;
+
+    this.classList.add("memory-card-flip");
+
+    // la primera carta elegida entra aqui
+    if (!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this; // esta sera la primera carta
+        return;
+    };
+
+    // la segunda carta elegida entra aqui
+    secondCard = this;
+
+    checkForMatch();
+};
+
+// comprobar si son iguales las cartas
+function checkForMatch() {
+    let isMatch = firstCard.dataset.fruit === secondCard.dataset.fruit;
+    isMatch ? disableCards() : unflipCards();
+};
+
+// remover listener de cartas
+function disableCards() {
+    firstCard.removeEventListener("click", flipCard);
+    secondCard.removeEventListener("click", flipCard);
+
+    resetBoard();
+};
+
+// ocultar las cartas
+function unflipCards() {
+    lockBoard = true;
+
+    setTimeout(() => {
+        firstCard.classList.remove("memory-card-flip");
+        secondCard.classList.remove("memory-card-flip");
+
+        resetBoard();
+    }, 1500);
+};
+
+// reestablecer tablero
+function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+};
 
 // evento onclick sobre cada carta
 cards.forEach( card => {
