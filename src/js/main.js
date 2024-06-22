@@ -66,3 +66,14 @@ function resetBoard() {
 cards.forEach( card => {
     card.addEventListener("click", flipCard);
 } );
+
+// mezclar las cartas (IIFE function, se invoca al cargar la pagina)
+// el contenedor de cartas tiene un display en flex,
+// y cada flex item tiene una propiedad orden en 0 por defecto.
+// generamos numeros aleatorios entre 0 y 11 para la posicion de las 12 cartas.
+(function shuffle() {
+    cards.forEach( card => {
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
+    } );
+})();
