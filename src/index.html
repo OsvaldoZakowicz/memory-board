@@ -4,63 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Board Game</title>
     <!-- css -->
     <link rel="stylesheet" href="./css/styles.css">
+
+    <title>Memory Board Game</title>
 </head>
 
 <body>
-    <section class="memory-board">
-        <div class="memory-card" data-fruit="apple-green">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Apple-Green-Flat-icon.png" width="128" height="128" alt="Green Apple">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <div class="memory-card" data-fruit="blueberry">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Blueberry-Flat-icon.png" width="128" height="128" alt="Blueberry">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <div class="memory-card" data-fruit="cherry">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Cherry-2-Flat-icon.png" width="128" height="128" alt="Cherry">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <div class="memory-card" data-fruit="grape-red">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Grape-Red-Flat-icon.png" width="128" height="128" alt="Grape">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <div class="memory-card" data-fruit="lemon">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Lemon-Flat-icon.png" width="128" height="128" alt="Lemon">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <div class="memory-card" data-fruit="orange">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Orange-Flat-icon.png" width="128" height="128" alt="Orange">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <!-- duplicados -->
-        <div class="memory-card" data-fruit="apple-green">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Apple-Green-Flat-icon.png" width="128" height="128" alt="Green Apple">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <div class="memory-card" data-fruit="blueberry">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Blueberry-Flat-icon.png" width="128" height="128" alt="Blueberry">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <div class="memory-card" data-fruit="cherry">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Cherry-2-Flat-icon.png" width="128" height="128" alt="Cherry">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <div class="memory-card" data-fruit="grape-red">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Grape-Red-Flat-icon.png" width="128" height="128" alt="Grape">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <div class="memory-card" data-fruit="lemon">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Lemon-Flat-icon.png" width="128" height="128" alt="Lemon">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-        <div class="memory-card" data-fruit="orange">
-            <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Orange-Flat-icon.png" width="128" height="128" alt="Orange">
-            <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
-        </div>
-    </section>
+    <main>
+        <header>
+            <h1 class="pacifico-regular">juego de memoria</h1>
+            <button id="restart-btn" class="btn" type="button">
+                <img src="https://icons.iconarchive.com/icons/colebemis/feather/128/rotate-ccw-icon.png" width="128" height="128" alt="reiniciar">
+            </button>
+        </header>
+        <section class="memory-board">
+            <div class="memory-card" data-fruit="apple-green">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Apple-Green-Flat-icon.png" width="128" height="128" alt="Green Apple">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-fruit="blueberry">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Blueberry-Flat-icon.png" width="128" height="128" alt="Blueberry">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-fruit="cherry">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Cherry-2-Flat-icon.png" width="128" height="128" alt="Cherry">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-fruit="grape-red">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Grape-Red-Flat-icon.png" width="128" height="128" alt="Grape">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-fruit="lemon">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Lemon-Flat-icon.png" width="128" height="128" alt="Lemon">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-fruit="orange">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Orange-Flat-icon.png" width="128" height="128" alt="Orange">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <!-- duplicados -->
+            <div class="memory-card" data-fruit="apple-green">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Apple-Green-Flat-icon.png" width="128" height="128" alt="Green Apple">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-fruit="blueberry">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Blueberry-Flat-icon.png" width="128" height="128" alt="Blueberry">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-fruit="cherry">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Cherry-2-Flat-icon.png" width="128" height="128" alt="Cherry">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-fruit="grape-red">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Grape-Red-Flat-icon.png" width="128" height="128" alt="Grape">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-fruit="lemon">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Lemon-Flat-icon.png" width="128" height="128" alt="Lemon">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-fruit="orange">
+                <img class="card-back" src="https://icons.iconarchive.com/icons/iconarchive/flat-fruit-soft/128/Orange-Flat-icon.png" width="128" height="128" alt="Orange">
+                <img class="card-front" src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-mono/128/Red-Question-Mark-icon.png" width="128" height="128" alt="Memory Card">
+            </div>
+        </section>
+        <footer class="nunito-regular">
+            <p>hecho con &#128153; por <a href="https://github.com/OsvaldoZakowicz" target="_blank">osval</a></p>
+        </footer>
+    </main>
 
     <!-- js -->
     <script src="./js/main.js"></script>

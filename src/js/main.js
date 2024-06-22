@@ -1,5 +1,7 @@
 // cartas
 const cards = document.querySelectorAll(".memory-card");
+// boton de reinicio
+const restart_btn = document.getElementById("restart-btn");
 
 // estado de la carta, al inicio no hay ninguna volteada
 let hasFlippedCard = false;
@@ -53,7 +55,7 @@ function unflipCards() {
         secondCard.classList.remove("memory-card-flip");
 
         resetBoard();
-    }, 1500);
+    }, 1000);
 };
 
 // reestablecer tablero
@@ -67,13 +69,22 @@ cards.forEach( card => {
     card.addEventListener("click", flipCard);
 } );
 
-// mezclar las cartas (IIFE function, se invoca al cargar la pagina)
+// mezclar las cartas
 // el contenedor de cartas tiene un display en flex,
 // y cada flex item tiene una propiedad orden en 0 por defecto.
 // generamos numeros aleatorios entre 0 y 11 para la posicion de las 12 cartas.
-(function shuffle() {
+function shuffle() {
     cards.forEach( card => {
         let randomPos = Math.floor(Math.random() * 12);
         card.style.order = randomPos;
     } );
-})();
+};
+
+// al cargar la pagina, mezclar las cartar
+window.addEventListener("load", shuffle);
+
+// al seleccionar el boton de reinicio, recargar la pagina
+restart_btn.addEventListener("click", () => {
+    location.reload()
+    return false;
+})
